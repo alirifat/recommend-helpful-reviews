@@ -1,12 +1,16 @@
 # Recommend Helpful Customer Reviews to Businesses
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/yelp-logo.png" width="800" height="500">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/yelp-logo.png" width="800" height="500">
 </p>
 
 <i>We aim to predict helpful reviews based on the features that are extracted from the review corpus. Our purpose is to enhance customer interaction and help businesses to establish profitable customer relationships.</i>
 
+---
 
+***For the best notebook experience, [please view the project on Nbviewer](https://nbviewer.jupyter.org/github/alirkaya/predict-helpful-reviews/blob/main/predict-helpful-reviews.ipynb)***
+
+---
 
 ## Table of Contents
 
@@ -67,7 +71,6 @@ In the project, I had the opportunity to exercise the following machine learning
 
 ---
 
-[See the full report](https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/Final%20Report.pdf)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -121,9 +124,6 @@ For a detailed version of this section, [please refer to the full report](https:
 
 The businesses spread around Canada and the United States. While almost ¼ (43,693 out of 168,903) of all open businesses placed in Canada, Ontario is the most populous state with 36,627 companies. Quebec and Alberta follow it with the number of companies 10,223 and 8,682, respectively.   
 
-<p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/business-locations.JPG" width="800" height="400">
-</p>
 
 In the United States, the companies grouped around Arizona-Nevada, Ohio-Wisconsin-Illinois, and North Carolina. However, Arizona and Nevada have 48% of all businesses in the US. 
 
@@ -138,8 +138,9 @@ The most populous states in terms of the number of businesses are Arizona and Ne
 Yelp's dataset provides industry information for each business. However, 374 firms do not associate with any industry. For this reason, they are dropped from the study. The remaining 124,836 firms are divided into 22 industries. The biggest industry is the restaurant industry, which is followed by the shopping industry. They almost account for half of the businesses in the US.  
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/industries.JPG" width="600" height="400">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/yelp_data_industries.jpg" width="600" height="400">
 </p>
+
 
 #### Businesses in the Restaurant Industry
 
@@ -164,8 +165,9 @@ On the other hand, the total number of reviews submitted to the restaurant busin
 The histogram of star rating is left-skewed, which means that the number of businesses with a higher star rating than 3.0 is less than the number of companies with a lower star. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/histograms.JPG" width="800" height="300">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/histogram_business_stars.jpg" width="800" height="300">
 </p>
+
 
 The y-axis of the review counts' histogram is logarithmically scaled, which allows showing a wide range of data compactly. In the figure, the markers on the y-axis increases by multiples of 10. In other words, even though the gaps between the markers on the y-axis are equal on the figure, they grow exponentially.  We see that only a few businesses have more than a thousand customer reviews. 
 
@@ -174,8 +176,9 @@ The y-axis of the review counts' histogram is logarithmically scaled, which allo
 The number of reviews decreases as we increase the number of helpful votes. It may require to have a cut-off point to determine the helpful reviews. Because a customer reviews with one helpful vote should differ from the one with a hundred helpful votes. For this reason, implementing a cut-off may help us better predict helpful reviews. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/histogram-heatmap.JPG" width="800" height="300">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/correlation_heatmap_helpfulness_time.jpg" width="800" height="300">
 </p>
+
 
 We see a heatmap of correlation among numerical values in the reviews data. To investigate the relationship between helpful, funny, and cool reviews and time, we generated three measures such as year, month, and day using modular arithmetic. We used an anchor (12/15/2020) to extract all reviews' age in terms of years, months, and days.  
 
@@ -187,13 +190,12 @@ We want to investigate how helpful votes are distributed with respect to star ra
 distribution is right-skewed, which means that most of the reviews have 5-stars. 
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/star-helpful.JPG" width="400" height="300">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/histogram_customer_star_rating.jpg" width="400" height="300">
 </p>
+
 
 ---
 
-[See the full report](https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/Final%20Report.pdf)  
-[See the notebook](https://nbviewer.jupyter.org/github/alirifat/yelp_nlp_project/blob/main/02_yelp_eda.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -219,8 +221,9 @@ Finally, we performed data cleaning processes and vectorized the reviews corpus 
 Most reviews have less than 100 sentences, but it is perfectly normal to have incredibly long customer reviews. However, the longest review consists of more than 250 sentences.  
 
 <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/basic-text-features.JPG" width="800" height="800">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/histograms_meta_features.jpg" width="800" height="800">
 </p>
+
 
 In English, a sentence has, on average, 20 words, and each word has 4.7 letters. Thus, an average sentence in English has 94 letters. Accordingly, any properly constructed review may not be able to have more than 50 sentences. The longest sentence is wordy and does not contain any material 
 information about the place, such as price, time, and photo ([see the notebook](https://nbviewer.jupyter.org/github/alirifat/yelp_nlp_project/blob/main/03_yelp_data_cleaning_feature_engineering.ipynb) for further details). 
@@ -230,8 +233,9 @@ On the other hand, we focused on the number of dollar signs, exclamation marks, 
 However, the average length of words is an essential feature to identify anomalies in the corpus. Since it is approximately 5 in English, we can locate any non-English review. In the below figure, we can see the relationship between the average length of words in a review and its language. As the average length of words increases, it is more likely to be written in a different language. 
 
  <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/correlation-extracted_features.JPG" width="800" height="600">
+  <img src="https://github.com/alirkaya/predict-helpful-reviews/blob/main/Documentation/images/correlation_heatmap_meta_features.jpg" width="800" height="600">
 </p>
+
 
 Almost all features are highly correlated ([see the notebook](https://nbviewer.jupyter.org/github/alirifat/yelp_nlp_project/blob/main/03_yelp_data_cleaning_feature_engineering.ipynb) for further details), and using all features as the determinants of the target variable will cause multicollinearity. For this reason, we only selected the number of unique words as an independent variable and discarded the remaining features. It was possible to extract only the number of unique words initially; however, this would not provide the best opportunity to get familiar with the corpus. As a result, we used the extracted features for experimental purposes and decided to generate another set of predictive variables. 
 
@@ -291,8 +295,6 @@ In the last step, we generated a TF-IDF matrix from the cleaned corpus. However,
 
 ---
 
-[See the full report](https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/Final%20Report.pdf)  
-[See the notebook](https://nbviewer.jupyter.org/github/alirifat/yelp_nlp_project/blob/main/03_yelp_data_cleaning_feature_engineering.ipynb)  
 [Go to Table of Contents](#Table-of-Contents)
 
 ---
@@ -305,11 +307,6 @@ We generated a binary target variable by transforming helpful votes. Any review 
 
 We used the TF-IDF matrix to predict helpful reviews; however, the results were not promising ([see the notebook](https://nbviewer.jupyter.org/github/alirifat/yelp_nlp_project/blob/main/04_algorithms_with_default_parameters.ipynb) for a detailed explanation). To check if the matrix works, we predicted star ratings of the reviews with the same matrix. We transformed the star ratings into a binary variable by assigning 1 to reviews with four or higher ratings and 0 to the remaining ones. The TF-IDF matrix works when we predict the star rating; however, it does not predict helpful reviews. For this reason, we used only the extracted features to predict helpful reviews.
 
-After deciding the set of features, we did cross-validation to see the algorithms’ performances. The black bars represent the variation in the validation scores.
-
- <p align="center">
-  <img src="https://github.com/alirifat/yelp_nlp_project/blob/main/Documentation/figures/validation-scores.JPG" width="800" height="600">
-</p>
 
 Based on the cross-validation scores, we dropped Naïve Bayes from the study. The differences between the training and the set scores are not significant for __ROC__, but __PR__ and __MCC__ scores differ significantly for tree-based algorithms (excluding __XGBoost__). Accordingly, those algorithms may not be good choices for our data.
 
@@ -325,11 +322,9 @@ We used GridSearchCv. which goes over every possible combination of  parameters 
 
 |                              | **Score (Default Parameters)** | **Score (Optimized Parameters)** | **Change** |
 | ---------------------------- | :----------------------------: | :------------------------------: | :--------: |
-| **Logistic Regression**      |             0.975              |              0.976               |  + 0.001   |
+| **Logistic Regression**      |             0.976              |              0.974               |  + 0.002   |
 | **kNN Classifier**           |             0.897              |              0.950               |  + 0.053   |
-| **Decision Tree Classifier** |             0.785              |              0.785               |   0.000    |
 | **Random Forest Classifier** |             0.969              |              0.976               |  + 0.007   |
-| **Extra Trees Classifier**   |             0.965              |              0.972               |  + 0.007   |
 | **XGBoost Classifier**       |             0.980              |              0.981               |  + 0.001   |
 
 ---
@@ -352,39 +347,31 @@ We located the reviews in the test set with the highest helpful votes and checke
 |                              | **Recall Rate** | **Predicted Value** |      | **True Value** |
 | ---------------------------- | :-------------: | :-----------------: | :------------: | :--: |
 | **Logistic Regression**      |    100.00 %     |         11          |     out of     |  11  |
-| **KNN Classifier**           |    100.00 %     |         11          |     out of     |  11  |
-| **Decision Tree Classifier** |    100.00 %     |         11          |     out of     |  11  |
-| **Random Forest Classifier** |     72.73 %     |          8          |     out of     |  11  |
-| **Extra Trees Classifier**   |     81.82 %     |          9          |     out of     |  11  |
-| **XGBoost Classifier**       |     72.73 %     |          8          |     out of     |  11  |
+| **KNN Classifier**           |    90.9%    |         10         |     out of     |  11  |
+| **Random Forest Classifier** |     90.9%     |          10          |     out of     |  11  |
+| **XGBoost Classifier**       |     90.9%     |          10          |     out of     |  11  |
 
-We set 0.95 as the threshold for the assigned probabilities so that the business owners (the restaurants in this case) will be more likely to provide customers with the reviews that can attract their attention and present what they are looking for. They can also promote those reviews among the others so that it will be easier for the customers to reach the relevant information about the business and the product(s).
-
-Based on the algorithms' performance in the confusion matrices and the top 5% predicted reviews, we can say that __kNN__ is the most practical algorithm. Even though __XGBoost__ has the best performing results, it has some flaws:
-
-1. __kNN__ hits a 100% recall rate for the top 10 helpful reviews, but __XGBoost__ stays at 72.73%.
-2. Even though __kNN__ has a lower recall rate in general, it has the most significant number of correctly predicted helpful reviews.
-3. __kNN__ provides a broader pool of helpful reviews for the business owner to hand-pick if necessary.
-
-For those reasons, _we believe that __kNN__ is the best algorithm for our purpose_ in this project. We will provide some examples in the next chapters.
+We set 0.95 as the threshold for the assigned probabilities in order to increase the recall rate. By doing this, we hope to avoid false positives so that the business owners (the restaurants in this case) will be more likely to provide the customers with the reviews that can attract their attention and present what they are looking for. Also, they can promote those reviews among the others so that it will be easier for the customers to reach the relevant information about the business and the product(s).
 
 ## Conclusion
 
-In this project, we aimed to develop a model that can predict if a freshly posted review will be helpful. If so, the businesses can benefit from it by promoting those reviews and letting the customers enjoy them. 
+This project aims to predict helpful reviews among the freshly posted ones. If so, businesses can benefit from it by promoting helpful reviews and let the customers enjoy them.
 
-A helpful review's essential components are the number of customers who voted for the review and the amount of time passed since it was posted. By doing so, we hoped to save the amount of time that would require a review to be recognized as a helpful review and provide those reviews for the customers' convenience in advance.
+Since one of the most critical components of a helpful review is the amount of time passed since it was posted, we hoped to save that time and present those reviews for the convenience of the customers in advance.
 
-We started with the corpus to identify the helpful reviews. First, we implemented text cleaning steps to ready the text for vectorization. Later, we used the TF-IDF method to vectorize the text and set the following cut-off points for the minimum, and the maximum number of reviews (documents) for a word (term) has to appear as 3% and 90%, respectively. 
+Firstly, we implemented text normalization steps and applied Tf-Idf vectorization to prepare the corpus for modeling. We used the following cut-off points for the minimum and the maximum number of documents for a word to appear as 3% and 90%, respectively.
 
-However, the TF-IDF vector was not an efficient way to identify helpful reviews as it was detecting the star rating. For this reason, we employed the features extracted from the reviews, such as the number of photos, the number of price information, the average helpful vote that the writer has, etc. As a result, we improved the model performance.
+However, text features weren't effective in predicting helpful reviews. The reason may be that text features are a summary of words that appear in the corpus. People need more than words when looking for information, such as prices, time, URLs, photos, and emoticons. Nevertheless, text normalization steps clear the corpus from information in that manner. Thus, we extracted features using Regular Expressions to keep information within the corpus.
 
-Later, we did hyperparameter optimization using the extracted features to find the parameter values that explain the data best. Finally, we trained the models using the whole training set and evaluated them with the test set.
+Later, we did hyperparameter optimization using the extracted features to find the parameter values that best explain the data.
 
-To increase the recall rate, we focused on the reviews that have at least 0.95 assigned probability. As a result, we got the highest recall rate by using __XGBoost__ Classifier. However, the best result is acquired by the __kNN__ classifier.
+Finally, we trained the models using the training set and evaluated the results with the test set.
 
-As a result, we think that the best algorithm to identify helpful reviews with the given feature set and the given conditions such as 0.95 probability cut-off is the __kNN__ algorithm. We claim __kNN__ can detect the reviews that have the highest number of helpful votes with great accuracy. Even though its recall rate is lower than some of the other algorithms, it is best to recommend the highest number of helpful reviews.
+To increase the recall rate, we focused on the reviews that have at least 0.95 predicted probability. As a result, RF serves best to the purpose of the research. Even though it has slightly less recall rate, it provides a greater pool of reviews.
 
----
+In the final step, we plotted the learning curves for each classifier.
+
+Below, we give examples of helpful reviews, which have predicted probability over 0.95, and their corresponding helpful votes. The business can have the benefit of the machine learning applications to detect helpful reviews in advance and enhance their customer relationship.
 
 [Go to Table of Contents](#Table-of-Contents)
 
